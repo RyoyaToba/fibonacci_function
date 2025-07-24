@@ -14,14 +14,10 @@ func get_fibonacci(n int) (ans int) {
 	}
 
 	// 再帰処理として実装を考える
-	if n >= 2 {
-		ans = get_fibonacci(n-1) + get_fibonacci(n-2)
-	}
-
-	return ans
+	return get_fibonacci(n-1) + get_fibonacci(n-2)
 }
 
 // エントリーポイント(コマンドでの実行想定はないが、一応)
 func main() {
-	get_fibonacci(1)
+
 }
