@@ -1,39 +1,30 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // フィボナッチ関数
 func get_fibonacci(n int) (ans int) {
 
-	// 値を保管しておくためのキャッシュを用意
-	cash := make(map[int]int)
-
-	var helper func(int) int
-
-	helper = func(k int) int {
-		// キャッシュに値が存在すればその値を返す
-		if v, ok := cash[k]; ok {
-			return v
-		}
-
-		if k == 0 {
-			return 0
-		}
-
-		if k == 1 {
-			return 1
-		}
-		// キャッシュに値を保存する
-		cash[k] = helper(k-1) + helper(k-2)
-		return cash[k]
+	if n == 0 {
+		return 0
 	}
 
-	// 再帰処理として実装を考える
-	return helper(n)
+	if n == 1 {
+		return 1
+	}
+
+	a, b := 0, 1
+	for i := 2; i <= n; i++ {
+		a, b = b, a+b
+	}
+
+	return b
 }
 
 // エントリーポイント(コマンドでの実行想定はないが、一応)
 func main() {
-	ans := get_fibonacci(100)
+	ans := get_fibonacci(50)
 	fmt.Println(ans)
 }
