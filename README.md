@@ -14,3 +14,8 @@ Go言語（バージョン1.22.6）で実装しています。
     ├── main_test.go //テストコード
     └── main.go //実装
 ```
+
+## 実行
+```bash
+go run main/main.go
+```
