@@ -5,7 +5,7 @@ import (
 )
 
 // フィボナッチ関数
-func get_fibonacci(n int) (ans int) {
+func get_fibonacci(n int) int {
 
 	if n == 0 {
 		return 0
